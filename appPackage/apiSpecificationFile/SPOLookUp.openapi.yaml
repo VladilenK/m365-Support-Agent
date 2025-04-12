@@ -1,0 +1,29 @@
+openapi: 3.0.1
+info:
+  title: SPOLookUp
+  description: Import from "SPOLookUp" Function App
+  version: '1.0'
+servers:
+  - url: https://ent-spo-api.azure-api.net/SPOLookUp
+paths:
+  /SharePointLookup:
+    get:
+      operationId: get-sharepointlookup
+      summary: Get SharePoint Site Information
+      description: This API retrieves information about SharePoint sites.
+      responses:
+        '200':
+          description: 
+components:
+  securitySchemes:
+    apiKeyHeader:
+      type: apiKey
+      name: Ocp-Apim-Subscription-Key
+      in: header
+    apiKeyQuery:
+      type: apiKey
+      name: subscription-key
+      in: query
+security:
+  - apiKeyHeader: [ ]
+  - apiKeyQuery: [ ]

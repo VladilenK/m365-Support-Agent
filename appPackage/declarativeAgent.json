@@ -1,0 +1,34 @@
+{
+    "$schema": "https://developer.microsoft.com/json-schemas/copilot/declarative-agent/v1.3/schema.json",
+    "version": "v1.3",
+    "name": "m365 Support Agent",
+    "description": "Declarative agent created with Teams Toolkit",
+    "instructions": "$[file('instruction.txt')]",
+    "conversation_starters": [
+        {
+            "title": "Getting Started",
+            "text": "Hi, what can you do?"
+        },
+        {
+            "title": "Getting Help",
+            "text": "How can I get help?"
+        },
+        {
+            "title": "Weather",
+            "text": "Tell me, what is the weather today?"
+        }
+    ],
+    "capabilities": [
+        {
+            "name": "WebSearch",
+            "sites": [
+                {
+                    "url": "https://www.Vladilen.com"
+                },
+                {
+                    "url": "https://learn.microsoft.com/en-us/"
+                }
+            ]
+        }
+    ]
+}

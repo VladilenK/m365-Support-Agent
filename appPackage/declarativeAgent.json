@@ -10,8 +10,8 @@
             "text": "Hi, what can you do?"
         },
         {
-            "title": "Getting Help",
-            "text": "How can I get help?"
+            "title": "Get site details",
+            "text": "Can I get details for the site http://Microsoft.com?"
         },
         {
             "title": "Weather",
@@ -30,5 +30,12 @@
                 }
             ]
         }
+    ],
+    "actions": [
+        {
+            "id": "sitesPlugin",
+            "file": "ai-plugin.json"
+        }
     ]
+
 }

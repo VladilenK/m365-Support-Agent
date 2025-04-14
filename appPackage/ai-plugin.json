@@ -1,0 +1,41 @@
+{
+    "$schema": "https://developer.microsoft.com/json-schemas/copilot/plugin/v2.1/schema.json",
+    "schema_version": "v2.1",
+    "namespace": "getsiteinfo",
+    "name_for_human": "Get site info",
+    "description_for_human": "Get information about site",
+    "description_for_model": "Plugin for getting the site's details, like owner, title, description, and URL.",
+    "functions": [ 
+        {
+            "name": "getSiteDetails",
+            "description": "Returns information about the site. Must accept query parameter - site url.",
+            "capabilities": {
+              "response_semantics": {
+                "data_path": "$.SharePointLookup",
+                "properties": {
+                  "title": "$.url",
+                  "subtitle": "$.body"
+                }
+              }
+            }
+          }
+    ],
+    "runtimes": [
+        {
+            "type": "OpenApi",
+            "auth": {
+              "type": "None"
+            },
+            "spec": {
+              "url": "apiSpecificationFile/SPOLookUp.yaml"
+            },
+            "run_for_functions": [
+              "getSiteDetails"
+            ]
+          }
+    ],
+    "capabilities": {
+      "localization": {},
+      "conversation_starters": []
+    }
+  }

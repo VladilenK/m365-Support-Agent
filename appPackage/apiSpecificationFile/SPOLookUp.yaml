@@ -8,22 +8,23 @@ servers:
 paths:
   /SharePointLookup:
     get:
-      operationId: get-sharepointlookup
+      operationId: getSiteDetails
       summary: Get SharePoint Site Information
       description: This API retrieves information about SharePoint sites.
+      parameters:
+        - in: query
+          name: url
+          schema:
+            type: string
+          description: Provide the SharePoint site URL to retrieve information.
       responses:
         '200':
           description: 
 components:
-  securitySchemes:
-    apiKeyHeader:
-      type: apiKey
-      name: Ocp-Apim-Subscription-Key
-      in: header
-    apiKeyQuery:
-      type: apiKey
-      name: subscription-key
-      in: query
-security:
-  - apiKeyHeader: [ ]
-  - apiKeyQuery: [ ]
+  schemas:
+    SiteInfo:
+      type: object
+      properties:
+        info:
+          type: string
+          description: Site details.
